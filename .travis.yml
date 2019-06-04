@@ -1,0 +1,9 @@
+language: perl
+perl:
+  - "5.10.1"
+  - "dev"
+  - "blead"
+sudo: false
+script:
+  - perl Makefile.pl && make test RELEASE_TESTING=1
+
