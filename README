@@ -2,7 +2,7 @@ NAME
     JIRA::REST::OAuth - Sub Class JIRA::REST providing OAuth 1.0 support.
 
 VERSION
-    Version 1.00
+    Version 1.01
 
 SYNOPSIS
     Module is a sub-class of JIRA::REST, to provide OAuth support, no

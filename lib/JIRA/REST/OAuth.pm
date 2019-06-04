@@ -1,5 +1,7 @@
 package JIRA::REST::OAuth;
 
+use base qw(JIRA::REST);
+
 use 5.010;
 use strict;
 use warnings;
@@ -13,6 +15,8 @@ use Crypt::OpenSSL::RSA();
 use HTTP::Headers();
 use URI();
 use CGI();
+
+our $VERSION = '1.01';
 
 sub new
 {
@@ -171,11 +175,7 @@ JIRA::REST::OAuth - Sub Class JIRA::REST providing OAuth 1.0 support.
 
 =head1 VERSION
 
-Version 1.00
-
-=cut
-
-our $VERSION = '1.00';
+Version 1.01
 
 =head1 SYNOPSIS
 

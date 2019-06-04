@@ -17,6 +17,7 @@ my %WriteMakefileArgs = (
         'Test::More' => '0',
     },
     PREREQ_PM => {
+        'JIRA::REST' => '0',
         'Carp'       => '0',
         'Net::OAuth' => '0',
         #Net::OAuth::ProtectedResourceRequest => '0', # part of Net::OAuth.
