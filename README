@@ -2,7 +2,7 @@ NAME
     JIRA::REST::OAuth - Sub Class JIRA::REST providing OAuth 1.0 support.
 
 VERSION
-    Version 1.01
+    Version 1.02
 
 SYNOPSIS
     Module is a sub-class of JIRA::REST, to provide OAuth support, no
@@ -27,11 +27,10 @@ AUTHOR
     Adam R. Schobelock, "<schobes at gmail.com>"
 
 BUGS
-    Please report any bugs or feature requests to "bug-jira-rest-oauth at
-    rt.cpan.org", or through the web interface at
-    <https://rt.cpan.org/NoAuth/ReportBug.html?Queue=JIRA-REST-OAuth>. I
-    will be notified, and then you'll automatically be notified of progress
-    on your bug as I make changes.
+    Please report any bugs or feature requests through the web interface at
+    <https://github.com/schobes/JIRA-REST-OAuth/issues>. I will be notified,
+    and then you'll automatically be notified of progress on your bug as I
+    make changes.
 
 SUPPORT
     You can find documentation for this module with the perldoc command.
