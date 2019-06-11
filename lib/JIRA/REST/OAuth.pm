@@ -135,7 +135,7 @@ sub _generate_oauth_request
 
     my @rv = ($path, $query);
     if ($method =~ /^(?:POST|PUT)$/) {
-        @rv = ($path, $query, $content, $headers);
+        @rv = ($path, $query, $content, { $headers->flatten() });
     }
 
     return @rv;
