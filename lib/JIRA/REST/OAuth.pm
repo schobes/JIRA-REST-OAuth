@@ -16,7 +16,7 @@ use HTTP::Headers();
 use URI();
 use CGI();
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 sub new
 {
@@ -177,7 +177,7 @@ JIRA::REST::OAuth - Sub Class JIRA::REST providing OAuth 1.0 support.
 
 =head1 VERSION
 
-Version 1.02
+Version 1.03
 
 =head1 SYNOPSIS
 
