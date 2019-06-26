@@ -70,6 +70,8 @@ sub _generate_oauth_request
 {
     my ($self, $method, $path, $query, $content, $headers) = @_;
 
+    $path = $self->_build_path($path, $query);
+
     # handle headers
     if ($method =~ /^(?:PUT|POST)$/) {
         my $h;
@@ -83,7 +85,7 @@ sub _generate_oauth_request
             $h = HTTP::Headers->new();
         }
 
-        unless (defined $h->content_type) {
+        unless (length $h->content_type) {
             $h->content_type('application/json;charset=UTF-8');
         }
         unless (defined $h->header('Accept')) {
@@ -163,26 +165,6 @@ sub POST
 {
     my $self = shift;
     return $self->SUPER::POST($self->_generate_oauth_request('POST', @_));
-}
-
-sub next_issue
-{
-    my $self = shift;
-
-    my $iter = $self->{iter} or croak $self->_error("You must call set_search_iterator before calling next_issue");
-
-    if ($iter->{offset} == $iter->{results}{total}) {
-        # This is the end of the search results.
-        $self->{iter} = undef;
-        return;
-    }
-    elsif ($iter->{offset} == $iter->{results}{startAt} + @{$iter->{results}{issues}}) {
-        # Time to get the next bunch of issues
-        $iter->{params}{startAt} = $iter->{offset};
-        $iter->{results}         = $self->SUPER::POST($self->_generate_oauth_request('POST', '/rest/api/latest/search', undef, $iter->{params}));
-    }
-
-    return $iter->{results}{issues}[$iter->{offset}++ - $iter->{results}{startAt}];
 }
 
 1;
