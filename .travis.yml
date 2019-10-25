@@ -8,7 +8,7 @@ matrix:
   include:
     - perl: "5.10.1"
       before_install:
-        - perlbrew install -j4 perl-5.10.1 || cat /home/travis/perl5/perlbrew/build.perl-5.10.1.log && exit 1
+        - perlbrew install -j4 perl-5.10.1 || (cat /home/travis/perl5/perlbrew/build.perl-5.10.1.log && exit 1)
         - perlbrew use perl-5.10.1
 env: 
   - RELEASE_TESTING=1
