@@ -2,12 +2,11 @@ language: perl
 sudo: false
 perl:
   - "5.30.0"
-  - "5.28.2"
-  - "5.24.3"
 matrix:
   include:
     - perl: "5.10.1"
       before_install:
+        - perlbrew install-patchperl
         - perlbrew install perl-5.10.1
         - perlbrew use perl-5.10.1
 env: 
