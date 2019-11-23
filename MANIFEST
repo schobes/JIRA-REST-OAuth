@@ -6,3 +6,4 @@ README.md
 t/00-load.t
 t/manifest.t
 t/pod.t
+xt/boilerplate.t
