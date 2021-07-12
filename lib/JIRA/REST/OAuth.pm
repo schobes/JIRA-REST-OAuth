@@ -95,7 +95,7 @@ sub _generate_oauth_request
     }
 
     # generate oauth request url
-    my $url = $$self{url};
+    my $url = $self->{rest}->getHost;
     $url =~ s/\/$//;
     $url .= $path;
     my %oauth_params = (
